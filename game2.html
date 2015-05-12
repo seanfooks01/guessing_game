@@ -1,8 +1,9 @@
 <script type="text/javascript">
 var answer, message, safeDirection, userChoice;
 var randomNumber = Math.random();
-
-answer = prompt ("You hear a woman's scream coming from a nearbye cave. Will you try and save her? Yes or No?");
+var userName;
+var userName = prompt("What is your name?")
+answer = prompt ("Lord " + userName + "! You hear a woman's scream coming from a nearbye cave. Will you try and save her? Yes or No?");
         if (answer === "Yes") {
         alert("Draw Your Sword!")
         }
@@ -18,15 +19,19 @@ answer = prompt ("You hear a woman's scream coming from a nearbye cave. Will you
           safeDirection = "Left";
         }
 
-userChoice = prompt ("OH NO!! You fall into a DARK DUNGEON! Do you go Left or Right?");
+userChoice = prompt ("OH NO, Lord " + userName + "!! You fall into a DARK DUNGEON! Do you go Left or Right?");
 
       if (userChoice === safeDirection) {
-        message = "Good Choice! No Monsters!";
+        var confirm = prompt("Good choice. No monsters. Would you like to continue?")
+          if (confirm = "Yes") {
+          alert("Dude, go home and take a nap.");
+          }
+          else {
+          alert("Don't be such a big baby.");
+          }
       }
 
       else {
-        message = "Sorry, you just died!";
+        alert("Sorry, you just died!");
   }
-  alert(message);
-
       </script>
