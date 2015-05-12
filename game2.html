@@ -1,17 +1,18 @@
 <script type="text/javascript">
 var answer, message, safeDirection, userChoice;
 var randomNumber = Math.random();
-var userName;
-var userName = prompt("What is your name?")
-answer = prompt ("Lord " + userName + "! You hear a woman's scream coming from a nearbye cave. Will you try and save her? Yes or No?");
+
+answer = prompt ("You hear a woman's scream coming from a nearbye cave. Will you try and save her? Yes or No?");
+//use answer.toLowerCase === "yes" to accept yes regardless of the case
         if (answer === "Yes") {
         alert("Draw Your Sword!")
         }
         else {
         alert("Come back when you're not so scared!");
-        };
+        };//lose the simecolon
 
       console.log(safeDirection);
+//handle the case of Right and Left like I noted in line 6 above
         if (randomNumber <= 0.50) {
           safeDirection = "Right";
         }
@@ -19,19 +20,15 @@ answer = prompt ("Lord " + userName + "! You hear a woman's scream coming from a
           safeDirection = "Left";
         }
 
-userChoice = prompt ("OH NO, Lord " + userName + "!! You fall into a DARK DUNGEON! Do you go Left or Right?");
+userChoice = prompt ("OH NO!! You fall into a DARK DUNGEON! Do you go Left or Right?");
 
       if (userChoice === safeDirection) {
-        var confirm = prompt("Good choice. No monsters. Would you like to continue?")
-          if (confirm = "Yes") {
-          alert("Dude, go home and take a nap.");
-          }
-          else {
-          alert("Don't be such a big baby.");
-          }
+        message = "Good Choice! No Monsters!";
       }
 
       else {
-        alert("Sorry, you just died!");
+        message = "Sorry, you just died!";
   }
+  alert(message);
+
       </script>
