@@ -1,37 +1,43 @@
 <script type="text/javascript">
-var answer, message, safeDirection, userChoice;
-var randomNumber = Math.random();
-var userName;
-var userName = prompt("What is your name?")
-answer = prompt ("Lord " + userName + "! You hear a woman's scream coming from a nearbye cave. Will you try and save her? Yes or No?");
-        if (answer === "Yes") {
-        alert("Draw Your Sword!")
-        }
-        else {
-        alert("Come back when you're not so scared!");
-        };
+  (function() {
+      var answer, message, safeDirection, getSafeDirection, userName, userChoice, confirm, randomNumber;
+  
+      getSafeDirection = function(rand) {
+        var midPoint = 0.3333;
 
-      console.log(safeDirection);
-        if (randomNumber <= 0.50) {
-          safeDirection = "Right";
-        }
-        else {
-          safeDirection = "Left";
-        }
-
-userChoice = prompt ("OH NO, Lord " + userName + "!! You fall into a DARK DUNGEON! Do you go Left or Right?");
-
-      if (userChoice === safeDirection) {
-        var confirm = prompt("Good choice. No monsters. Would you like to continue?")
-          if (confirm = "Yes") {
-          alert("Dude, go home and take a nap.");
-          }
-          else {
-          alert("Don't be such a big baby.");
-          }
+        if (rand <= midPoint) {
+          return "Right";
+        } else {
+          return "Left";
+        }      
       }
 
-      else {
-        alert("Sorry, you just died!");
-  }
-      </script>
+      userName = prompt("What is your name?")
+      answer   = prompt("Lord " + userName + "! You hear a woman's scream coming from a nearbye cave. Will you try and save her? Yes or No?");
+      
+      if (answer === "Yes") {
+        message = "Draw Your Sword!";
+        alert(message);
+
+        safeDirection = getSafeDirection(Math.random());
+
+        userChoice = prompt("OH NO, Lord " + userName + "!! You fall into a DARK DUNGEON! Do you go Left or Right?");
+    
+        if (userChoice === safeDirection) {
+          confirm = prompt("Good choice. No monsters. Would you like to continue?")
+          if (confirm == "Yes") {
+            message = "Dude, go home and take a nap.";
+          } else {
+            message = "Don't be such a big baby.";
+          }
+        } else {
+          message = "Sorry, you just died!";
+        }
+    
+        alert(message);
+      } else {
+        message = "Come back when you're not so scared!";
+        alert(message);
+      }
+    })();
+</script>
