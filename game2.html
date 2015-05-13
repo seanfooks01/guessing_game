@@ -1,43 +1,38 @@
 <script type="text/javascript">
-  (function() {
-      var answer, message, safeDirection, getSafeDirection, userName, userChoice, confirm, randomNumber;
-  
-      getSafeDirection = function(rand) {
-        var midPoint = 0.3333;
 
-        if (rand <= midPoint) {
-          return "Right";
-        } else {
-          return "Left";
-        }      
-      }
+var answer;
 
-      userName = prompt("What is your name?")
-      answer   = prompt("Lord " + userName + "! You hear a woman's scream coming from a nearbye cave. Will you try and save her? Yes or No?");
-      
-      if (answer === "Yes") {
-        message = "Draw Your Sword!";
-        alert(message);
+var Warrior = function(name, magic, weapon){
+ var life = 100;
+ this.name= name;
+ this.magic= magic;
+ this.weapon= weapon;
+}
+var Magic = function(name, value){
+ this.name= name;
+ this.value= value;
+}
+var Weapon = function(name, value){
+ this.name= name;
+ this.value= value;
+}
 
-        safeDirection = getSafeDirection(Math.random());
+var sword= new Weapon("Excalabur", 20);
+var red= new Magic("Red Potion", 10);
+var blue= new Magic("Blue Potion", 20);
+var user= new Warrior("Tiger", blue, sword);
 
-        userChoice = prompt("OH NO, Lord " + userName + "!! You fall into a DARK DUNGEON! Do you go Left or Right?");
-    
-        if (userChoice === safeDirection) {
-          confirm = prompt("Good choice. No monsters. Would you like to continue?")
-          if (confirm == "Yes") {
-            message = "Dude, go home and take a nap.";
-          } else {
-            message = "Don't be such a big baby.";
-          }
-        } else {
-          message = "Sorry, you just died!";
-        }
-    
-        alert(message);
-      } else {
-        message = "Come back when you're not so scared!";
-        alert(message);
-      }
-    })();
+answer=prompt("Are you ready for an adventure " + user.name +"?")
+
+if(answer == "Yes"){
+ prompt("Did you bring " + user.weapon.name +", and your " + user.magic.name+"!")
+   if(answer){
+     alert("Great Job " + user.name +"!")
+   }
+}
+else {
+ alert("You didn't come prepared!");
+}
+
+
 </script>
