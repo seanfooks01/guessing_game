@@ -1,0 +1,50 @@
+body {
+  background-color: gold;
+ }
+article {
+  background-color: blue;
+  margin: auto;
+  border: solid black 3px;
+}
+h1 {
+  text-align: center;
+}
+h2 {
+  text-align: center;
+  color: white;
+}
+nav {
+  text-align: center;
+  font-size: 24pt;
+  border: 3px solid #3B0B0B;
+  word-spacing: 20px;
+  padding: 10px;
+}
+p {
+  font-size: 16pt;
+  color: white;
+  text-align: center;
+  padding: 5px;
+}
+.game {
+  background-color: red;
+  width: 1024px;
+  height: 500px;
+  margin: auto;
+  border: solid black 3px;
+}
+.charimg {
+  width: 400px;
+  height: 400px;
+  float: right;
+  margin: 30px 30px 0px 0px;
+}
+.enemyimg {
+  width: 400px;
+  height: 400px;
+  margin: 30px 0px 0px 30px;
+}
+.buttons {
+  text-align: center;
+  display: block;
+}

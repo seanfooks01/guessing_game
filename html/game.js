@@ -1,5 +1,3 @@
-<script type="text/javascript">
-
 var Warrior = function(name, magic, weapon, health){
  this.health = health;
  this.name= name;
@@ -33,6 +31,17 @@ var Enemy = function(name, weapon, health){
 
 var answer, userName, weaponChoice, weapon, userTemple;
 
+var useWeapon = function(){
+  var randomDamage = 10 + Math.floor(Math.random() * 100);
+  userTemple.enemy.health -= randomDamage;
+  if(userTemple.enemy.health <= 0){
+    userTemple.enemy.health = 0;
+    alert("Congratulations! You have killed " + userTemple.enemy.name + "!")
+  }
+  var enemyHealthText = document.getElementById("enemyHealthText");
+  enemyHealthText.textContent = userTemple.enemy.health;
+};
+
 var chooseRandom = function(array){
   var random = Math.floor(Math.random() * array.length);
   return array[random];
@@ -59,10 +68,10 @@ else {
 var red   = new Magic("Red Potion", 10);
 var blue  = new Magic("Blue Potion", 20);
 
-var user  = new Warrior(userName, blue, weapon, 80 + Math.floor(Math.random() * 100));
-var dlink = new Enemy("Dark Link", hammer, 80 + Math.floor(Math.random() * 100));
-var volvagia = new Enemy("Volvagia", firebreath, 80 + Math.floor(Math.random() * 100));
-var phantom = new Enemy("Phantom Ganon", bow, 80 + Math.floor(Math.random() * 100));
+var user  = new Warrior(userName, blue, weapon, 500 + Math.floor(Math.random() * 100));
+var dlink = new Enemy("Dark Link", hammer, 500 + Math.floor(Math.random() * 100));
+var volvagia = new Enemy("Volvagia", firebreath, 500 + Math.floor(Math.random() * 100));
+var phantom = new Enemy("Phantom Ganon", bow, 500 + Math.floor(Math.random() * 100));
 
 var fire  = new Temple("Fire Temple", "The sky near the mountain is blurred with smoke and ashes, and the summit is very violent and active. It's time to find out the source of its strange activity.", volvagia );
 var water = new Temple("Water Temple", "Underneath Lake Hylia is the Water Temple. It is perplexing, tricky, and an all-around difficult place to navigate through. Many puzzles and dangers await you, so be prepared to act quickly.", dlink);
@@ -107,9 +116,3 @@ alert("Walking in, you see two figures. One is Princess Zelda, chained to the wa
 
 alert("You must save Zelda! The battle begins! " + userTemple.enemy.name + " has a health of  " + userTemple.enemy.health + "! Your weapon, " + user.weapon.name + " deals " + user.weapon.damage + " damage! Your health is at " + user.health + "! After you attack, " + userTemple.enemy.name + " will try and attack you.");
 
-
-
-
-
-
-</script>
