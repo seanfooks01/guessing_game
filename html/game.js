@@ -40,13 +40,12 @@ var useWeapon = function(){
   if (randomMiss > 0.5) {
   userTemple.enemy.health -= randomDamage;
   alert("You hit " + userTemple.enemy.name + "!");
-
-    if(userTemple <= 0){
+  };
+  if(userTemple.enemy.health <= 0){
     userTemple.enemy.health = 0;
     alert("Congratulations! You have killed " + userTemple.enemy.name + "!")
+
   }
-
-
   else{
     enemyAttack();
   }
@@ -65,6 +64,7 @@ if(randomMiss > 0.5 ){
 user.health -= randomDamage;
 alert("You got hit!");
 }
+
   if(user.health <= 0){
     user.health = 0;
     alert("You Just Died!")
