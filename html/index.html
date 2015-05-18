@@ -1,7 +1,8 @@
 <!DOCTYPE html>
   <head>
     <title>Zelda Guessing Game</title>
-    <link rel="stylesheet" type="text/css" href="main.css"
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <script type="text/javascript" src="game.js"></script>
 
   </head>
   <body>
@@ -14,11 +15,24 @@
       Your adventure begins in the land of Hyrule. You start out by choosing your name and a weapon. Choose carefully because this will be your only weapon throughout the game. After choosing your weapon, you will then be asked to choose your magic weapon.
       </p>
     </article>
+    <div class="buttons">
+       <h3>What do you do?<h3>
+      <button onclick="useWeapon()">Use Weapon</button>
+      <button onclick="useShield()">Use Shield</button>
+      <button onclick="usePotion()">Use Potion</button>
+    </div>
     <br>
     <div class="game">
       <img class="enemyimg" src="http://vignette2.wikia.nocookie.net/zelda/images/a/a6/Phantom_Ganon_(Ocarina_of_Time).png/revision/latest?cb=20100411225535">
 
       <img class="charimg" src="http://vignette4.wikia.nocookie.net/zelda/images/9/92/185px-Link_Attacking_(Soulcalibur_II).png/revision/latest?cb=20130511092824&path-prefix=es">
+    </div>
+    <div>
+      <h2>(enemy name's) Health</h2>
+        <p id="enemyHealthText">0</p>
+      <h2>Your Health</h2>
+        <p id="userHealthText">0</p>
+
     </div>
 
   <footer>Created By Sean Fooks ©2015</footer>
